@@ -10,6 +10,7 @@ import com.cherepnin.exceptions.UploadFileException;
 import com.cherepnin.service.FileService;
 import com.cherepnin.service.MainService;
 import com.cherepnin.service.ProducerService;
+import com.cherepnin.service.enums.LinkType;
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -73,10 +74,9 @@ public class MainServiceImpl implements MainService {
 
         try {
             AppDocument doc = fileService.processDoc(update.getMessage());
-
-            // TODO добавить сохранение документа
+            String link = fileService.generateLink(doc.getId(), LinkType.GET_DOC);
             var answer = "Документ успешно загружен! "
-                    + "Ссылка для скачивания: http://test.ru/get-doc/777";
+                    + "Ссылка для скачивания: " + link;
             sendAnswer(answer, chatId);
         } catch (UploadFileException e) {
             log.error(e);
@@ -95,11 +95,10 @@ public class MainServiceImpl implements MainService {
         }
 
         try {
-            AppPhoto appPhoto = fileService.processPhoto(update.getMessage());
-
-            // TODO добавить генерацию ссылки для скачивания фото
+            AppPhoto photo = fileService.processPhoto(update.getMessage());
+            String link = fileService.generateLink(photo.getId(), LinkType.GET_PHOTO);
             var answer = "Фото успешно загружено!"
-                    + " Ссылка для скачивания: http://test.ru/get-photo/777";
+                    + " Ссылка для скачивания: " + link;
             sendAnswer(answer, chatId);
         } catch (UploadFileException e) {
             log.error(e);

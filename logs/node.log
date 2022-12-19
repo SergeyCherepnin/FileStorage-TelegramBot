@@ -39,3 +39,9 @@
 2022-12-15 22:42:29 DEBUG ConsumerServiceImpl:38 - NODE: photo message is received
 2022-12-15 22:46:47 DEBUG ConsumerServiceImpl:38 - NODE: photo message is received
 2022-12-15 22:46:57 DEBUG ConsumerServiceImpl:31 - NODE: document message is received
+2022-12-16 19:50:32 DEBUG ConsumerServiceImpl:38 - NODE: photo message is received
+2022-12-18 23:22:57 DEBUG ConsumerServiceImpl:24 - NODE: text message is received
+2022-12-18 23:23:05 DEBUG ConsumerServiceImpl:24 - NODE: text message is received
+2022-12-18 23:23:15 DEBUG ConsumerServiceImpl:24 - NODE: text message is received
+2022-12-18 23:23:29 DEBUG ConsumerServiceImpl:31 - NODE: document message is received
+2022-12-18 23:24:14 DEBUG ConsumerServiceImpl:38 - NODE: photo message is received
