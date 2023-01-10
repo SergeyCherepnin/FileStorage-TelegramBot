@@ -1,13 +1,13 @@
 package com.cherepnin.service.enums;
 
-public enum ServiceCommands {
+public enum ServiceCommand {
     HELP("/help"),
     REGISTRATION("/registration"),
     CANCEL("/cancel"),
     START("/start");
 
     private final String value;
-    ServiceCommands(String value) {
+    ServiceCommand(String value) {
         this.value = value;
     }
 
@@ -16,7 +16,12 @@ public enum ServiceCommands {
         return value;
     }
 
-    public boolean equate(String value) {
-        return this.toString().equals(value);
+    public static ServiceCommand fromValue(String v) {
+        for (ServiceCommand c: ServiceCommand.values()) {
+            if (c.value.equals(v)) {
+                return c;
+            }
+        }
+        return null;
     }
 }

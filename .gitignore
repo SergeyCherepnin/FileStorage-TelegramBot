@@ -2,4 +2,10 @@
 .jpb
 /logs
 /files
-*/target/**
+/common-jpa/target
+/common-rabbitmq/target
+/common-utils/target
+/dispatcher/target
+/mail-service/target
+/node/target
+/rest-service/target
