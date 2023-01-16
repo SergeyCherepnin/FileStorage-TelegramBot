@@ -1,5 +1,6 @@
 .idea
 .jpb
+.iml
 /logs
 /files
 /common-jpa/target
